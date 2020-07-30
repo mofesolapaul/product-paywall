@@ -24,7 +24,7 @@ class VerifyTransaction
      * @return bool|null
      * @throws ConnectionErrorException
      */
-    public function verify(string $transactionRef)
+    public function verify(?string $transactionRef)
     {
         if (!$transactionRef) {
             return null;

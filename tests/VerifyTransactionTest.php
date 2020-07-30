@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\VerifyTransaction;
+use Httpful\Request;
 use PHPUnit\Framework\TestCase;
 
 class VerifyTransactionTest extends TestCase
@@ -26,5 +27,9 @@ class VerifyTransactionTest extends TestCase
     public function testWithSomeTxnRef()
     {
         self::assertEquals($this->verifyTransaction->verify('hello'), false);
+    }
+
+    public function testCliche() {
+
     }
 }

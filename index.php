@@ -12,8 +12,13 @@ $verifyTransaction = new VerifyTransaction();
 
 if ($verifyTransaction->verify($ref)) {
     $response = Request::get(env('PRODUCT_URL'))
-        ->addHeader('Authorization', 'Bearer ' . env('PAYMENT_PROVIDER_SECRET_KEY'))
         ->expectsType('application/octet-stream')
-        ->send();
-    readfile($response);
+        ->send()->body;
+
+    header('Content-Disposition: attachment; filename="' . env('PRODUCT_FILENAME') . '"');
+    header("Content-Type: application/octet-stream;");
+
+    echo $response;
+} else {
+    header('Location: ' . env('FAILURE_REDIRECT'));
 }

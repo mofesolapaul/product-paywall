@@ -1,9 +1,12 @@
 {
     "require": {
-        "php": "^7.3",
+        "php": "^7.0",
         "vlucas/phpdotenv": "^5.1",
         "nategood/httpful": "^0.3.2",
         "rakibtg/sleekdb": "^1.5",
+        "symfony/polyfill-iconv": "^1.18"
+    },
+    "require-dev": {
         "phpunit/phpunit": "^9.2"
     },
     "autoload": {
